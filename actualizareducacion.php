@@ -13,11 +13,11 @@
       <fieldset>
         <!--Formulario de actualizar datos. -->
       <legend>Actualizar datos</legend>
-      Fecha de Inicio: <input type="date" name="fechai" value=""> <br><br>
-      Fecha de Finalizacion: <input type="date" name="fechaf" value=""><br><br>
-      Texto: <input type="text" name="texto" value=""><br><br>
-      Empresa: <input type="text" name="empresa" value=""> <br><br>
-      <input type="hidden" name="id_estudios" value="1">
+      Fecha de Inicio: <input type="text" name="fechai" value="<?=$_GET["año_inicio"]?>"> <br><br>
+      Fecha de Finalizacion: <input type="text" name="fechaf" value="<?=$_GET["año_finalizacion"]?>"><br><br>
+      Empresa: <input type="text" name="empresa" value="<?=$_GET["empresa"]?>"> <br><br>
+      Texto: <input type="text" name="texto" value="<?=$_GET["texto"]?>"><br><br>
+      <input type="hidden" name="id_estudios" value="<?=$_GET["id_estudios"]?>">
       <input type="submit" name="Actualizar" value="Actualizar">
     </fieldset>
     </form>
@@ -25,8 +25,8 @@
     //incluimos reserva.php y llamamo a la funcion que nos actualizara los datos.
     include '/modelo/educacion.php';
     $educacion=new Educacion();
-    if (isset($_POST['fechai']) && isset($_POST['fechaf']) && isset($_POST['texto']) && isset($_POST['empresa'])) {
-      $actualizareducacion=$educacion->ActualizarEducacion($_POST['fechai'], $_POST['fechaf'], $_POST['texto'], $_POST['empresa'], $_POST["id_estudios"]);
+    if (isset($_POST['fechai']) && isset($_POST['fechaf']) && isset($_POST['empresa']) && isset($_POST['texto'])) {
+      $actualizareducacion=$educacion->ActualizarEducacion($_POST['fechai'], $_POST['fechaf'], $_POST['empresa'], $_POST['texto']);
       if ($actualizareducacion==true) {
         var_dump($actualizareducacion);
       }

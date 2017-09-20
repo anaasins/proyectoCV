@@ -10,8 +10,8 @@ class Educacion extends db
     parent::__construct();
   }
 
-  public function ActualizarEducacion($id_estudios,$año_inicio,$año_final,$texto,$empresa){
-            $sql="UPDATE estudios SET año_inicio=".$año_inicio.", año_finalizacion=".$año_final.", empresa='".$empresa."', texto='".$texto."' WHERE id_estudios=".$id_estudios."";
+  public function ActualizarEducacion($año_inicio,$año_final,$empresa,$texto){
+            $sql="UPDATE estudios SET año_inicio='".$año_inicio."', año_finalizacion='".$año_final."', empresa='".$empresa."', texto='".$texto."'";
             $actualizarreserva=$this->realizarConsulta($sql);
             if ($actualizarreserva=!false) {
               return true;
@@ -19,6 +19,22 @@ class Educacion extends db
               return false;
             }
           }
+  function mostrarEducacion(){
+                //Construimos la consulta
+                $sql="SELECT * FROM estudios";
+                //Realizamos la consulta
+                $resultado=$this->realizarConsulta($sql);
+                if($resultado!=null){
+                  //Montamos la tabla de resultado
+                  $tabla=[];
+                  while($fila=$resultado->fetch_assoc()){
+                    $tabla[]=$fila;
+                  }
+                  return $tabla;
+                }else{
+                  return null;
+                }
+              }
 
 
 }
