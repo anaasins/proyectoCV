@@ -65,6 +65,16 @@ class Usuario extends db
     }
   }
 
+ function actualizarDatos($id, $foto, $nombre, $apellidos, $direccion, $correo, $telefono, $redes){
+            $sql="UPDATE datospersonales SET nombre='".$nombre."', apellidos='".$apellidos."', foto='".$foto."', direccion='".$direccion."',correo='".$correo."', telefono=".$telefono.", redes_sociales='".$redes."' WHERE id_personal=".$id;
+            $actualizarreserva=$this->realizarConsulta($sql);
+            if ($actualizarreserva=!false) {
+              return true;
+            }else {
+              return false;
+            }
+          }
+
 }
 
  ?>

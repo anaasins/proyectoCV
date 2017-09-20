@@ -2,13 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Actualizar usuario</title>
+    <title>Actualizar educacion</title>
   </head>
   <body>
 
-
-    <!--Cuerpo de la pagina -->
-    <article class="article">
     <form class="" action="actualizareducacion.php" method="post">
       <fieldset>
         <!--Formulario de actualizar datos. -->
@@ -32,7 +29,7 @@
       }
     }
      ?>
-    </article>
+
 
   </body>
 </html>

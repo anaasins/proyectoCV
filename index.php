@@ -32,7 +32,9 @@
         echo "<li>".$usuario['telefono']."</li>";
         echo "<li>".$usuario['correo']."</li>";
         echo "<li>".$usuario['redes_sociales']."</li></ul>";
+        echo "<a href='actualizarpersonales.php?id_personal=".$usuario['id_personal']."&foto=".$usuario['foto']."&nombre=".$usuario['nombre']."&apellidos=".$usuario['apellidos']."&direccion=".$usuario['direccion']."&telefono=".$usuario['telefono']."&correo=".$usuario['correo']."&redes=".$usuario['redes_sociales']."'>Actualizar datos personales.</a>";
       }
+
 
       ?>
       <h2>Experiencia laboral</h2>
