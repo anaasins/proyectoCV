@@ -25,7 +25,7 @@ $usuario=new Usuario();
 
            if ($registrado['contrasenya']==sha1($_POST['pass'])) {
              echo "Usuario logueado";
-             $sesion->addUsuario($registrado['correo']);
+             $sesion->addUsuario($registrado['id_personal']);
              header('Location: index.php');
            }else {
              echo "Las contraseñas no coinciden";

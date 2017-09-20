@@ -48,6 +48,23 @@ class Usuario extends db
     }
   }
 
+  function datosCv($idusuario){
+    //Construimos la consulta
+    $sql="SELECT * from datospersonales WHERE id_personal='".$idusuario."'";
+    //Realizamos la consulta
+    $resultado=$this->realizarConsulta($sql);
+    if($resultado!=null){
+      //Montamos la tabla de resultados
+      $tabla=[];
+      while($fila=$resultado->fetch_assoc()){
+        $tabla[]=$fila;
+      }
+      return $tabla;
+    }else{
+      return null;
+    }
+  }
+
 }
 
  ?>
