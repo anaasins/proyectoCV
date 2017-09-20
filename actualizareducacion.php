@@ -26,9 +26,9 @@
     include '/modelo/educacion.php';
     $educacion=new Educacion();
     if (isset($_POST['fechai']) && isset($_POST['fechaf']) && isset($_POST['empresa']) && isset($_POST['texto'])) {
-      $actualizareducacion=$educacion->ActualizarEducacion($_POST['fechai'], $_POST['fechaf'], $_POST['empresa'], $_POST['texto']);
+      $actualizareducacion=$educacion->ActualizarEducacion($_POST['fechai'], $_POST['fechaf'], $_POST['empresa'], $_POST['texto'], $_POST['id_estudios']);
       if ($actualizareducacion==true) {
-        var_dump($actualizareducacion);
+        header('Location: index.php');
       }
     }
      ?>

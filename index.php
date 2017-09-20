@@ -42,6 +42,14 @@
         echo "<ul><li><b>".$experiencia['anyoinicio']."-".$experiencia['anyofinal'].": </b>" .$experiencia['empresa'].": ".$experiencia['texto']."</li></ul>";
       }
      ?>
+     <h2>Educación</h2>
+     <?php
+      $educacionusuario=$educacion->mostrarEducacion($_SESSION['usuario']);
+      foreach ($educacionusuario as $educacion) {
+        echo "<ul><li><b>".$educacion['año_inicio']."-".$educacion['año_finalizacion'].": </b>".$educacion['empresa'].": ".$educacion['texto']."</li></ul>";
+        echo "<a href='actualizareducacion.php?id_estudios=".$educacion['id_estudios']."&año_inicio=".$educacion['año_inicio']."&año_finalizacion=".$educacion['año_finalizacion']."&empresa=".$educacion['empresa']."&texto=".$educacion['texto']."'>Actualizar educacion.</a>";
+      }
+      ?>
   </body>
 </html>
 <?php
